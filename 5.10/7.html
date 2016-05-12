@@ -21,7 +21,7 @@
 	function mergeObject(defaultvalue,realvalue){
 		if (realvalue && typeof realvalue=='object'){
 			for(var key in realvalue){
-				defaultvalue[key]=realvalue[key]||defaultvalue[key];
+				defaultvalue[key]=realvalue[key]||defaultvalue[key];  //   || 操作符 用法：当第一个值为ture 返回第一个 否则返回第二个
 				/*if  (realvalue[key]){
 					defaultvalue[key]=realvalue[key];
 					}else{
