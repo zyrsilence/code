@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>7.匿名函数的自调</title>
+</head>
+
+<body>
+<script>
+	/*
+	已知 函数名（）;
+		代码（）；
+	所以 （（代码））（）；
+	  (function(){
+		  代码;
+		  代码;
+		  })();  匿名函数的自调用
+	*/
+	(function (){
+		document.write("hello world"+"<br/>");
+		})();
+	//匿名自调用函数传参问题
+	/*
+		已知	add(1,2)
+		所以（代码）（1,2）;
+	*/
+	(function(){
+		document.write("hello "+arguments[0]+"<br/>");
+		})("silence");
+</script>
+</body>
+</html>

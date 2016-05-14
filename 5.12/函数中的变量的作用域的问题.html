@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>3.函数中的变量的作用域的问题</title>
+</head>
+
+<body>
+<script>
+	var val="apple";	//全局变量,到哪里都可以使用得
+	function funA(){
+		val="pear";			//并没有使用var  所以这个val 依旧是全局变量val 
+		document.write("inner val:"+val+"<br/>");
+		}
+	funA();
+	document.write("outer val"+val+"<br/>");
+	
+	function funB(){
+		var val="banana";			//var val 说明这里val是局部变量  
+		document.write("inner val1:"+val+"<br/>"); //所以这里输出的val是局部变量val
+		}
+	funB();
+	document.write("outer val2"+val+"<br/>");
+	
+	function funC(){
+		var cc="myval";      //局部变量不可以在除了在它定义的地方外使用。
+		}
+	funC();
+	document.write("outer val2"+cc+"<br/>");
+</script>
+</body>
+</html>

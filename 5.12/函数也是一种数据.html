@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>4.函数也是一种数据</title>
+</head>
+
+<body>
+<script>
+	var x=1;
+	var y=x;//数值的传递
+	//函数也是一种数据  也说明可以传递  不只是值 而且还有
+	var sum=function(a,b){
+		return a+b;
+		}
+	var add=sum;
+	alert(add(1,2));
+	document.write(typeof add);
+	document.write(typeof sum);
+</script>
+</body>
+</html>

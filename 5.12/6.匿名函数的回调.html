@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>6.匿名函数的回调</title>
+</head>
+
+<body>
+<script>
+	//实例：以指定的格式输出结果    （将多个数字*2）
+	//不使用匿名函数的情况
+	function show(arr){
+		for(var i=0;i<arr.length;i++){
+				document.write(arr[i]+"<br/>");
+			}
+		}
+	function show2(arr){
+		document.write("<ul>");
+		for(var i=0;i<arr.length;i++){
+				document.write("<li>"+arr[i]+"</li>");
+			}
+		document.write("</ul>")
+		}
+	function jisuan(){
+		var arr=new Array();
+		for(var i=0;i<arguments.length-1;i++){
+				arr[i]=arguments[i]*2;
+			}
+			if((typeof arguments[arguments.length-1])=="function"){
+				arguments[arguments.length-1](arr);
+				}//可能自己调用的不是一个函数 或者说并不能确定自己调用的是哪一个函数
+			//show2();
+		}
+	jisuan(1,2,3,4,show2);
+	//使用匿名函数的情况
+	jisuan(2,3,4,5,function(arr){
+			document.write("<ul>");
+			for(var i=0;i<arr.length;i++){
+				document.write("<li>"+arr[i]+"</li>");
+					}
+			document.write("</ul>")
+			}
+		)//有jisuan这个函数来调用 叫做回调
+	
+</script>
+</body>
+</html>

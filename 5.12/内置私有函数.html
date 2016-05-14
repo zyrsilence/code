@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>5内部私有函数</title>
+</head>
+
+<body>
+<script>
+	function show(){
+		function son(){//这是内置私有函数  只能通过父函数来调用子函数 
+			document.write("hello");
+			}//这种子函数用来包装一些特殊算法
+		}
+	//在show()的外面是不能调用到 到son的
+	//son();  //son is not defined
+	//实例  ：写一个函数，传入两个数据和一个运算符，计算两个数相应的值
+	function jisuan(a,b,op){
+		function add(a,b){
+			return a+b;
+			}
+		function sub1(a,b){
+			return a-b;
+			}
+		function mul(a,b){
+			return a*b;
+			}
+		function chu(a,b){
+			return a/b;
+			}
+		if(op=="+"){
+			return add(a,b);
+			}else if(op=="-"){
+				return sub1(a,b);
+			}else if(op=="*"){
+				return mul(a,b);
+			}else if(op=="/"){
+				return chu(a,b);
+			}	
+		}
+	document.write(jisuan(1,2,"-"));
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>2.函数的返回值_对象类型</title>
+</head>
+
+<body>
+	<script>
+    	function add(vala,valb){
+			var sum=vala+valb;
+			return {result:sum,a:vala,b:valb};
+			}
+		var r=add(1,2);
+		document.write(r.a+"+"+r.b+"+"+"="+r.result+"<br/>");
+		//不定参数-----arguments  
+		function add2(){
+			var sum=0;
+			var arr=new Array();//不能直接输入arguments 因为他是函数的内置属性
+			for(var i=0;i<arguments.length;i++){
+				sum+=arguments[i];
+				arr[i]=arguments[i];
+				}
+			return {result:sum,origin:arr};
+			}
+		var r2=add2(1,2,3,4,5,6,7,8);
+		var str=r2.origin.join("+");
+		document.write(str+"="+r2.result);
+    </script>
+</body>
+</html>
